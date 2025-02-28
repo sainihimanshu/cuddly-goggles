@@ -2,7 +2,7 @@ name: hero action
 
 on:
   push:
-    branches: main
+    branches: master
   workflow_dispatch:
 
 jobs:
@@ -16,4 +16,4 @@ jobs:
       - name: log
         run: |
           ls
-          echo ${{ github }}
+          echo ${{ github.event_name }} ${{ github.ref }}  ${{ github.repository }} ${{ github.workspace }} ${{ job.status }} ${{ runner.os }} ${{ runner.name }}
